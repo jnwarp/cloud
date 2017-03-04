@@ -6,17 +6,17 @@ This repository hosts the configuration for my network of servers, use the links
 
 ### distro
 
-- [Debian](https://github.com/jnwarp/cloud/distro/debian.md)
+- [Debian](https://github.com/jnwarp/cloud/blob/master/distro/debian.md)
 
 
 ### setup
 
-- [Nginx](https://github.com/jnwarp/cloud/setup/nginx.md)
-- [World Community Grid](https://github.com/jnwarp/cloud/setup/boinc.md)
+- [Nginx](https://github.com/jnwarp/cloud/blob/master/setup/nginx.md)
+- [World Community Grid](https://github.com/jnwarp/cloud/blob/master/setup/boinc.md)
 
 ### server
 
 - deviant
 - proxima
 - stargazer
-- [**vega**](https://github.com/jnwarp/cloud/server/vega.md)
+- [**vega**](https://github.com/jnwarp/cloud/blob/master/server/vega.md)
