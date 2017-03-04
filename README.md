@@ -6,7 +6,7 @@ This repository hosts the configuration for my network of servers, use the links
 
 ### distro
 
-- [Debian](https://github.com/jnwarp/cloud/blob/master/distro/debian.md)
+- [Ubuntu](https://github.com/jnwarp/cloud/blob/master/distro/ubuntu.md)
 
 
 ### setup
