@@ -1,5 +1,5 @@
-vega - AWS
-==========
+[Ubuntu 16.04](https://github.com/jnwarp/cloud/)
+================================================
 
 Basic Setup
 -----------
