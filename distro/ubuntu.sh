@@ -25,3 +25,13 @@ enabled = true
 [ssh-ddos]
 enabled  = true
 " > /etc/fail2ban/jail.local
+
+r="Unattended-Upgrade::Allowed-Origins{
+        "${distro_id}:${distro_codename}";
+        "${distro_id}:${distro_codename}-security";
+        "${distro_id}:${distro_codename}-updates";
+};"
+
+sed -i '
+s/(Unattended-Upgrade)((.|\n)*?)(};)/$r/
+' sshd_config
