@@ -1,8 +1,5 @@
-Backup Script
-=============
-
-Basic Setup
------------
+Backup Target
+-------------
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "root@vega.jnwarp.com"
@@ -28,3 +25,7 @@ scp vega-wordpress-`date +%F`.tar.gz.gpg vega@star.jnwarp.com:vega-wordpress-`da
 rm vega-wordpress.tar.gz
 rm vega-wordpress-`date +%F`.tar.gz.gpg
 ```
+
+Backup Destination
+------------------
+
