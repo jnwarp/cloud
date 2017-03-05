@@ -326,6 +326,11 @@ sudo mysql_secure_installation
 sudo apt-get install php-fpm php-mysql php-curl php-gd php-mcrypt php-xmlrpc
 ```
 
+AutoMySQLBackup: /etc/default/automysqlbackup
+```
+LATEST=yes
+```
+
 PHP: /etc/php/7.0/fpm/php.ini
 ```
 cgi.fix_pathinfo=0
