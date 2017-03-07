@@ -1,6 +1,6 @@
 ```bash
 # install dependencies
-apt-get install unzip
+apt-get install unzip php-dom
 
 # install rainloop into folder
 cd /var/www
