@@ -66,3 +66,9 @@ sudo ufw allow 80
 sudo ufw allow 443
 sudo ufw enable
 ```
+
+Two Factor Authentication
+```bash
+sudo apt-get install libpam-google-authenticator
+google-authenticator
+```
