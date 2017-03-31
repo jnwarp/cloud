@@ -6,12 +6,26 @@ Basic Setup
 
 Software: apt-get
 ```bash
-sudo apt-get install git curl vim zsh screenfetch gnupg-curl ranger htop ufw fail2ban
+sudo apt-get update; sudo apt-get install curl fail2ban git gnupg-curl htop python ranger screenfetch ufw vim zsh
 ```
 
-/etc/timezone
+Users: james
+```bash
+adduser james; gpasswd -a james sudo
 ```
-America/New_York
+
+```bash
+# clone dotfiles
+git clone https://github.com/andrewregan/dotfiles ~/.dotfiles
+
+# dotbot install
+~/.dotfiles/install
+```
+
+Timezone
+```bash
+sudo rm /etc/localtime
+sudo ln -s /usr/share/zoneinfo/US/Eastern /etc/localtime
 ```
 
 
@@ -62,8 +76,6 @@ sudo dpkg-reconfigure --priority=low unattended-upgrades
 Uncomplicated Firewall
 ```bash
 sudo ufw allow 22
-sudo ufw allow 80
-sudo ufw allow 443
 sudo ufw enable
 ```
 
