@@ -1,6 +1,8 @@
 vega - Amazon Web Services
 ==========================
 
+- [Ubuntu 16.04](https://github.com/jnwarp/cloud/blob/master/distro/ubuntu.md)
+
 Basic Setup
 -----------
 
