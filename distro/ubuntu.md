@@ -6,7 +6,7 @@ Basic Setup
 
 Software: apt-get
 ```bash
-sudo apt-get update; sudo apt-get install curl fail2ban git gnupg-curl htop python ranger screenfetch ufw vim zsh
+sudo apt-get update; sudo apt-get install curl fail2ban git gnupg-curl htop libpam-google-authenticator python ranger screenfetch ufw vim zsh
 ```
 
 Users: james
@@ -32,11 +32,24 @@ sudo ln -s /usr/share/zoneinfo/US/Eastern /etc/localtime
 Security
 --------
 
+Two Factor Authentication
+```bash
+google-authenticator
+```
+
+/etc/pam.d/sshd
+```
+#@include common-auth
+auth required pam_google_authenticator.so nullok
+```
+
 SSH: /etc/ssh/sshd_config
 ```
 PermitRootLogin no
+ChallengeResponseAuthentication yes
 PasswordAuthentication no
 AuthorizedKeysFile      %h/.ssh/authorized_keys
+AuthenticationMethods publickey,keyboard-interactive
 ```
 
 Fail2ban: /etc/fail2ban/jail.local
@@ -77,10 +90,4 @@ Uncomplicated Firewall
 ```bash
 sudo ufw allow 22
 sudo ufw enable
-```
-
-Two Factor Authentication
-```bash
-sudo apt-get install libpam-google-authenticator
-google-authenticator
 ```
