@@ -4,6 +4,7 @@ MySQL
 ```bash
 sudo apt-get install mysql-server
 sudo mysql_secure_installation
+openssl rsa -in /etc/letsencrypt/live/rel.jnwarp.com/privkey.pem -out /etc/mysql/privkey.pem
 ```
 
 /etc/mysql/mysql.conf.d/mysqld.cnf
