@@ -25,6 +25,12 @@ reliant
 127.0.0.1 reliant
 ```
 
+/etc/network/interfaces.d/60-cloud-init-ipv6.cfg
+```
+auto eth0
+iface eth0 inet6 dhcp
+```
+
 [Certbot](https://github.com/jnwarp/cloud/blob/master/setup/certbot.md)
 ---------
 
