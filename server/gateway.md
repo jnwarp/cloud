@@ -30,3 +30,9 @@ gateway
 auto eth0
 iface eth0 inet6 dhcp
 ```
+
+[Certbot](https://github.com/jnwarp/cloud/blob/master/setup/certbot.md)
+---------
+
+[Nginx](https://github.com/jnwarp/cloud/blob/master/setup/nginx.md)
+-------
