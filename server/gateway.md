@@ -58,9 +58,9 @@ server {
         
         location /shell/ {
                 rewrite ^/shell/(.*) /$1 break;
-								proxy_pass https://127.0.0.1:4200;
-								proxy_read_timeout 90;
-				}
+                proxy_pass https://127.0.0.1:4200;
+                proxy_read_timeout 90;
+        }
 
         add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload";
         add_header X-Frame-Options DENY;
