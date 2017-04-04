@@ -17,6 +17,7 @@ This repository hosts the configuration for my network of servers, use the links
 ### server
 
 - deviant
+- [**gateway**](https://github.com/jnwarp/cloud/blob/master/server/gateway.md)
 - proxima
 - [**reliant**](https://github.com/jnwarp/cloud/blob/master/server/reliant.md)
 - stargazer
