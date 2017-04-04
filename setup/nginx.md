@@ -1,13 +1,8 @@
 Nginx
 =====
 
-Certbot:
-```bash
-sudo apt-get install letsencrypt
-sudo systemctl stop nginx
-sudo letsencrypt certonly --rsa-key-size 4096 --standalone -d jnwarp.com -d vega.jnwarp.com
-sudo systemctl start nginx
-```
+[Certbot](https://github.com/jnwarp/cloud/blob/master/setup/certbot.md)
+---------
 
 Nginx: /etc/nginx/nginx.conf
 ```
@@ -81,17 +76,6 @@ http {
 }
 ```
 
-/etc/nginx/ssl/dhparam.pem
-```bash
-sudo mkdir /etc/nginx/ssl
-sudo openssl dhparam -out /etc/nginx/ssl/dhparam.pem 4096
-```
-
-/etc/nginx/ssl/chain.pem
-```bash
-sudo wget -O /etc/nginx/ssl/chain.pem "https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem"
-```
-
 /etc/nginx/sites-available/andrewregan.me.conf
 ```
 server {
@@ -127,7 +111,7 @@ server {
 
         ssl_certificate /etc/letsencrypt/live/andrewregan.me/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/andrewregan.me/privkey.pem;
-        ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/andrewregan.me/chain.pem;
 }
 
 server {
@@ -144,7 +128,7 @@ server {
 
         ssl_certificate /etc/letsencrypt/live/andrewregan.me/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/andrewregan.me/privkey.pem;
-        ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/andrewregan.me/chain.pem;
 }
 ```
 
@@ -178,7 +162,7 @@ server {
 
         ssl_certificate /etc/letsencrypt/live/jnwarp.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/jnwarp.com/privkey.pem;
-        ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/jnwarp.com/chain.pem;
 }
 
 server {
@@ -195,7 +179,7 @@ server {
 
         ssl_certificate /etc/letsencrypt/live/jnwarp.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/jnwarp.com/privkey.pem;
-        ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/jnwarp.com/chain.pem;
 }
 
 server {
@@ -214,7 +198,7 @@ server {
 
         ssl_certificate /etc/letsencrypt/live/jnwarp.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/jnwarp.com/privkey.pem;
-        ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/jnwarp.com/chain.pem;
 }
 ```
 
@@ -268,7 +252,7 @@ server {
 
         ssl_certificate /etc/letsencrypt/live/jameswarp.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/jameswarp.com/privkey.pem;
-        ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/jameswarp.com/chain.pem;
 }
 
 server {
@@ -285,7 +269,7 @@ server {
 
         ssl_certificate /etc/letsencrypt/live/jameswarp.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/jameswarp.com/privkey.pem;
-        ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/jameswarp.com/chain.pem;
 }
 ```
 
@@ -297,19 +281,6 @@ sudo ln -s /etc/nginx/sites-available/jameswarp.com.conf /etc/nginx/sites-enable
 ```
 User-agent: *
 Disallow: /
-```
-
-/root/certbot-renew.sh
-```bash
-#!/bin/bash
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-letsencrypt renew --rsa-key-size 4096 --standalone
-```
-
-crontab -e
-```
-# m h  dom mon dow   command
-20 3 * * * /root/certbot-renew.sh
 ```
 
 
