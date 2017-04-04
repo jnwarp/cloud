@@ -14,7 +14,9 @@ sudo openssl dhparam -out /etc/letsencrypt/dhparam.pem 4096
 ```bash
 #!/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+systemctl stop nginx
 letsencrypt renew --rsa-key-size 4096 --standalone
+systemctl start nginx
 ```
 
 crontab -e
