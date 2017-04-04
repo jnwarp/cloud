@@ -16,7 +16,7 @@ adduser james; gpasswd -a james sudo
 
 ```bash
 # clone dotfiles
-git clone https://github.com/andrewregan/dotfiles ~/.dotfiles
+git clone https://github.com/jnwarp/dotfiles ~/.dotfiles
 
 # dotbot install
 ~/.dotfiles/install
