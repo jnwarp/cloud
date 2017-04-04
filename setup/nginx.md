@@ -1,9 +1,6 @@
 Nginx
 =====
 
-[Certbot](https://github.com/jnwarp/cloud/blob/master/setup/certbot.md)
----------
-
 Nginx: /etc/nginx/nginx.conf
 ```
 worker_processes auto;
