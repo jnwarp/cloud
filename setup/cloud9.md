@@ -16,5 +16,5 @@ scripts/install-sdk.sh
 
 Start Cloud9
 ```bash
-node ~/.c9sdk/server.js -p 8080 -a :
+node ~/.c9sdk/server.js -w /home/james/ -p 8080 -a :
 ```
