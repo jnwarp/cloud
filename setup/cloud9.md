@@ -3,8 +3,13 @@ cloud9
 
 Install NodeJS
 ```bash
+# download node version manager
 sudo apt-get install build-essential libssl-dev
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+
+# install the lts version
+nvm install --lts
+nvm use --lts
 ```
 
 Install Cloud9
@@ -29,6 +34,24 @@ PATH=/home/james/.nvm/versions/node/v6.10.2/bin:/usr/local/bin:/usr/bin:/bin:/us
 cd /home/james/.c9sdk
 pm2 start process.yml
 ```
+
+/etc/nginx/sites-enabled/jnwarp.com.conf
+```
+location / {
+    auth_basic "Restricted Content";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+    rewrite ^/(.*) /$1 break;
+    proxy_pass http://127.0.0.1:8080;
+    proxy_read_timeout 90;
+}
+```
+
+```bash
+# password protect cloud9
+sudo sh -c "echo -n 'james:' >> /etc/nginx/.htpasswd"
+sudo sh -c "openssl passwd -apr1 >> /etc/nginx/.htpasswd"
+```
+
 
 Start Cloud9
 ------------
