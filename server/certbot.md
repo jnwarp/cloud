@@ -25,6 +25,6 @@ echo "# m h  dom mon dow   command"
 echo "20 3 * * * /root/certbot-renew.sh"
 echo ""
 echo "Copy the above output into the next screen."
-read -n1 -r -p "Press enter to continue..." key
+read -r -p "Press enter to continue..." key
 crontab -e
 ```

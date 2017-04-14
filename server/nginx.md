@@ -1,6 +1,11 @@
 Nginx
 =====
 
+Install Nginx
+```
+apt install nginx
+```
+
 */etc/nginx/nginx.conf*
 ```
 user www-data;
