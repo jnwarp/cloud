@@ -4,7 +4,7 @@ gateway
 Basic Setup: [Ubuntu 16.04](https://github.com/jnwarp/cloud/blob/master/distro/ubuntu.md)
 ------------
 
-Users:
+User Accounts
 ```bash
 userdel -r ubuntu
 passwd -l root
@@ -12,20 +12,20 @@ passwd -l root
 
 /etc/update-motd.d/00-header
 ```
-printf " ██████╗  █████╗ ████████╗███████╗██╗    ██╗ █████╗ ██╗   ██╗\n██╔════╝ ██╔══██╗╚══██╔══╝██╔════╝██║    ██║██╔══██╗╚██╗ ██╔╝\n██║  ███╗███████║   ██║   █████╗  ██║ █╗ ██║███████║ ╚████╔╝ \n██║   ██║██╔══██║   ██║   ██╔══╝  ██║███╗██║██╔══██║  ╚██╔╝  \n╚██████╔╝██║  ██║   ██║   ███████╗╚███╔███╔╝██║  ██║   ██║   \n ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   \n\n"
+printf "\n ██████╗  █████╗ ████████╗███████╗██╗    ██╗ █████╗ ██╗   ██╗\n██╔════╝ ██╔══██╗╚══██╔══╝██╔════╝██║    ██║██╔══██╗╚██╗ ██╔╝\n██║  ███╗███████║   ██║   █████╗  ██║ █╗ ██║███████║ ╚████╔╝ \n██║   ██║██╔══██║   ██║   ██╔══╝  ██║███╗██║██╔══██║  ╚██╔╝  \n╚██████╔╝██║  ██║   ██║   ███████╗╚███╔███╔╝██║  ██║   ██║   \n ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   \n\n"
 ```
 
-/etc/hostname
+*/etc/hostname*
 ```
 gateway
 ```
 
-/etc/hosts
+/etc/hosts*
 ```
 127.0.0.1 gateway
 ```
 
-/etc/network/interfaces.d/60-cloud-init-ipv6.cfg
+*/etc/network/interfaces.d/60-cloud-init-ipv6.cfg*
 ```
 auto eth0
 iface eth0 inet6 dhcp
@@ -37,7 +37,7 @@ iface eth0 inet6 dhcp
 [Nginx](https://github.com/jnwarp/cloud/blob/master/setup/nginx.md)
 -------
 
-/etc/nginx/sites-available/jnwarp.com.conf
+*/etc/nginx/sites-available/jnwarp.com.conf*
 ```
 server {
     listen 80;
@@ -111,8 +111,9 @@ server {
 }
 ```
 
+Enabling `jnwarp.com`
 ```bash
-sudo ln -s /etc/nginx/sites-available/jnwarp.com.conf /etc/nginx/sites-enabled/jnwarp.com.conf
+ln -s /etc/nginx/sites-available/jnwarp.com.conf /etc/nginx/sites-enabled/jnwarp.com.conf
 ```
 
 [ShellInABox](https://github.com/jnwarp/cloud/blob/master/setup/shellinabox.md)
