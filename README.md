@@ -4,6 +4,14 @@ cloud configuration
 This repository hosts the configuration for my network of servers, use the links below to navigate.
 
 
+Quick setup
+-----------
+```bash
+apt install python3; git clone https://github.com/jnwarp/cloud; cd cloud
+python3 setup.py -s certbot nginx
+```
+
+
 ### distro
 
 - [Ubuntu](https://github.com/jnwarp/cloud/blob/master/distro/ubuntu.md)

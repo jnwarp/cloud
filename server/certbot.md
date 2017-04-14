@@ -4,9 +4,9 @@ Certbot
 Install Certbot
 ```bash
 apt-get install letsencrypt
-letsencrypt certonly --rsa-key-size 4096 --standalone -d jnwarp.com -d vega.jnwarp.com
+#letsencrypt certonly --rsa-key-size 4096 --standalone -d jnwarp.com -d vega.jnwarp.com
 
-openssl dhparam -out /etc/letsencrypt/dhparam.pem 4096
+openssl dhparam -out /etc/letsencrypt/dhparam.pem &>/dev/null &
 #sudo wget -O /etc/letsencrypt/chain.pem "https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem"
 ```
 
