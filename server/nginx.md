@@ -2,7 +2,7 @@ Nginx
 =====
 
 Install Nginx
-```
+```bash
 apt install nginx
 ```
 
