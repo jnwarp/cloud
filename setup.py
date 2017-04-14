@@ -259,3 +259,15 @@ if __name__ == '__main__':
         print('\033[1;31m==============================\033[0;0m')
         process(read_file('host/' + args.host + '.md'), test_mode)
         print()
+    
+    if type(args.server) == list:
+        valid_servers = read_folder('server')
+        for path in args.server:
+            path += '-defer'
+            for server in valid_servers:
+                if path == server:
+                    # \033[1;32m = [0 none 1 bold; 0 none 31 red 32 green 33 yellow
+                    print('\033[1;31mServer:\033[1;31m', path, '\033[0;0m')
+                    print('\033[1;31m===========================\033[0;0m')
+                    process(read_file('server/' + path + '.md'), test_mode)
+                    print()
