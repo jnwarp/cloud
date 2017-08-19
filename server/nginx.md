@@ -42,7 +42,7 @@ http {
 	##
 	ssl_protocols TLSv1.2;
 	ssl_ecdh_curve secp384r1;
-	ssl_dhparam /etc/letsencrypt/dhparam.pem;
+	ssl_dhparam /etc/nginx/ssl/dhparam.pem;
 	ssl_ciphers AES256+EECDH:AES256+EDH:!aNULL;
 	ssl_prefer_server_ciphers on;
 	ssl_stapling on;
