@@ -38,6 +38,7 @@ Programs:
 
 - deviant
 - [gateway](https://github.com/jnwarp/cloud/blob/master/server/gateway.md)
+- [luna](https://github.com/jnwarp/cloud/blob/master/server/luna.md)
 - proxima
 - [reliant](https://github.com/jnwarp/cloud/blob/master/server/reliant.md)
 - stargazer
