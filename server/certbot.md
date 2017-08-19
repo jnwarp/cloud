@@ -7,10 +7,11 @@ apt-get install letsencrypt
 #letsencrypt certonly --rsa-key-size 4096 --standalone -d jnwarp.com -d vega.jnwarp.com
 
 # run this command at the end
-#openssl dhparam -out /etc/letsencrypt/dhparam.pem
+#openssl dhparam -out /etc/nginx/ssl/dhparam.pem 4096
 
 # get certificate in server configuration
-#sudo wget -O /etc/letsencrypt/chain.pem "https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem"
+mkdir /etc/nginx/ssl
+wget -O /etc/nginx/ssl/chain.pem "https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem"
 ```
 
 */root/certbot-renew.sh*
