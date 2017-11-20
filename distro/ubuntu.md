@@ -62,10 +62,10 @@ bantime = 3000000
 # 10 hours
 findtime = 36000
 
-[ssh]
+[sshd]
 enabled = true
 
-[ssh-ddos]
+[sshd-ddos]
 enabled = true
 ```
 
