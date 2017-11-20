@@ -10,7 +10,7 @@ userdel -r ubuntu
 passwd -l root
 ```
 
-/etc/update-motd.d/00-header*
+/etc/update-motd.d/00-header
 ```
 printf "\n███████╗██████╗  ██████╗████████╗███████╗\n██╔════╝██╔══██╗██╔════╝╚══██╔══╝██╔════╝\n█████╗  ██████╔╝██║        ██║   █████╗  \n██╔══╝  ██╔══██╗██║        ██║   ██╔══╝  \n██║     ██████╔╝╚██████╗   ██║   ██║     \n╚═╝     ╚═════╝  ╚═════╝   ╚═╝   ╚═╝     \n\n"
 ```
@@ -25,7 +25,7 @@ fbctf
 127.0.0.1 fbctf
 ```
 
-/etc/network/interfaces.d/60-cloud-init-ipv6.cfg
+*/etc/network/interfaces.d/60-cloud-init-ipv6.cfg*
 ```
 auto eth0
 iface eth0 inet6 dhcp
