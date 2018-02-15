@@ -8,7 +8,7 @@ Software: apt-get
 ```bash
 apt-get update
 apt-get upgrade
-apt-get install curl fail2ban git gnupg-curl htop libpam-google-authenticator python ranger screenfetch ufw vim zsh
+apt-get install curl fail2ban git gnupg-curl htop libpam-google-authenticator python ranger screenfetch ufw vim zsh ssh unattended-upgrades
 ```
 
 Users: james
