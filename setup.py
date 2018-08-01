@@ -191,9 +191,9 @@ def process(content, test_mode = False):
 
 
 if __name__ == '__main__':
-    # create a parser for getting the distro, server(s), and host
+    # create a parser for getting the distro, service(s), and host
     parser = argparse.ArgumentParser(
-        description='Deploy a server based on configurations specified in ' +
+        description='Deploy a service based on configurations specified in ' +
         'markdown format.'
     )
 
@@ -206,10 +206,10 @@ if __name__ == '__main__':
     )
 
     parser.add_argument(
-        '--server',
+        '--service',
         '-s',
-        help='Specify a list of servers to install and configure',
-        choices=read_folder('server'),
+        help='Specify a list of services to install and configure',
+        choices=read_folder('service'),
         nargs='*'
     )
 
@@ -245,12 +245,12 @@ if __name__ == '__main__':
         process(read_file('distro/' + args.distro + '.md'), test_mode)
         print()
 
-    if type(args.server) == list:
-        for path in args.server:
+    if type(args.service) == list:
+        for path in args.service:
             # \033[1;32m = [0 none 1 bold; 0 none 31 red 32 green 33 yellow
-            print('\033[1;31mServer:\033[1;31m', path, '\033[0;0m')
+            print('\033[1;31mService:\033[1;31m', path, '\033[0;0m')
             print('\033[1;31m===========================\033[0;0m')
-            process(read_file('server/' + path + '.md'), test_mode)
+            process(read_file('service/' + path + '.md'), test_mode)
             print()
 
     if type(args.host) == str:
@@ -260,14 +260,14 @@ if __name__ == '__main__':
         process(read_file('host/' + args.host + '.md'), test_mode)
         print()
     
-    if type(args.server) == list:
-        valid_servers = read_folder('server')
-        for path in args.server:
+    if type(args.service) == list:
+        valid_services = read_folder('service')
+        for path in args.service:
             path += '-defer'
-            for server in valid_servers:
-                if path == server:
+            for service in valid_services:
+                if path == service:
                     # \033[1;32m = [0 none 1 bold; 0 none 31 red 32 green 33 yellow
-                    print('\033[1;31mServer:\033[1;31m', path, '\033[0;0m')
+                    print('\033[1;31mService:\033[1;31m', path, '\033[0;0m')
                     print('\033[1;31m===========================\033[0;0m')
-                    process(read_file('server/' + path + '.md'), test_mode)
+                    process(read_file('service/' + path + '.md'), test_mode)
                     print()

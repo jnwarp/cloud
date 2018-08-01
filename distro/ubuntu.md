@@ -1,4 +1,4 @@
-[Ubuntu 16.04](https://github.com/jnwarp/cloud/)
+[Ubuntu 18.04](https://github.com/jnwarp/cloud/)
 ================================================
 
 Basic Setup
@@ -7,8 +7,8 @@ Basic Setup
 Software: apt-get
 ```bash
 apt-get update
-apt-get upgrade
-apt-get install curl fail2ban git gnupg-curl htop libpam-google-authenticator python ranger screenfetch ufw vim zsh ssh unattended-upgrades
+apt-get upgrade -y
+apt-get install curl fail2ban git htop libpam-google-authenticator python ranger screenfetch ufw vim zsh ssh unattended-upgrades links tmux -y
 ```
 
 Users: james
@@ -35,13 +35,20 @@ Security
 
 Two Factor Authentication
 ```bash
+# create two factor code
 runuser -l james -c 'google-authenticator'
+
+# move two factor to secret directory
+mkdir -p /var/lib/google-authenticator/
+mv /home/james/.google_authenticator /var/lib/google-authenticator/james
+chown root:root /var/lib/google-authenticator/*
 ```
 
 /etc/pam.d/sshd*
 ```
 #@include common-auth
-auth required pam_google_authenticator.so nullok
+auth [success=1 default=ignore] pam_succeed_if.so user notingroup sudo
+auth required pam_google_authenticator.so user=root secret=/var/lib/google-authenticator/${USER}
 ```
 
 /etc/ssh/sshd_config
