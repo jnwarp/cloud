@@ -40,10 +40,10 @@ Security
 /etc/ssh/sshd_config
 ```
 PermitRootLogin no
-ChallengeResponseAuthentication yes
+ChallengeResponseAuthentication no
 PasswordAuthentication no
-AuthorizedKeysFile %h/.ssh/authorized_keys
-AuthenticationMethods publickey,keyboard-interactive
+AuthorizedKeysFile .ssh/authorized_keys
+AuthenticationMethods publickey
 ```
 
 */etc/fail2ban/jail.local*
