@@ -1,4 +1,4 @@
-[Centos 7](https://github.com/jnwarp/cloud/)
+[Centos 8](https://github.com/jnwarp/cloud/)
 ============================================
 
 Basic Setup
@@ -12,7 +12,7 @@ dnf install -y epel-release
 
 dnf update
 dnf upgrade -y
-dnf install curl fail2ban git htop vim zsh ssh dnf-automatic links tmux -y
+dnf install -y curl fail2ban git htop vim zsh dnf-automatic tmux python2
 ```
 
 Users: james
@@ -60,4 +60,15 @@ enabled = true
 
 [sshd-ddos]
 enabled = true
+```
+
+*/etc/dnf/automatic.conf*
+```
+apply_updates = yes
+emit_via = stdio
+```
+
+Security: dnf-automatic
+```bash
+systemctl enable --now dnf-automatic-notifyonly.timer
 ```
