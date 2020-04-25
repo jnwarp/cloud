@@ -62,7 +62,7 @@ enabled = true
 enabled = true
 ```
 
-*/etc/dnf/automatic.conf*
+/etc/dnf/automatic.conf
 ```
 apply_updates = yes
 emit_via = stdio
